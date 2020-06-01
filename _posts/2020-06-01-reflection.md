@@ -283,7 +283,7 @@ Crea un ejecutable que, dado el nombre completo de una clase:
 
 # Enlaces de interés
 
-* https://www.baeldung.com/java-reflection
-* https://www.baeldung.com/java-type-erasure
-* https://www.baeldung.com/java-default-annotations
-* https://www.baeldung.com/java-custom-annotation
+* (https://www.baeldung.com/java-reflection)
+* (https://www.baeldung.com/java-type-erasure)
+* (https://www.baeldung.com/java-default-annotations)
+* (https://www.baeldung.com/java-custom-annotation)
