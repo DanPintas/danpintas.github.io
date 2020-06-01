@@ -1,10 +1,11 @@
 ---
 layout: default
-author: danpintas
+title: IntelliJ IDEA
 ---
+
 El IDE recomendado para desarrollo en la actualidad es IntelliJ IDEA, que tiene tanto versión gratuita como de pago.
 
-¿Por qué usar IntelliJ en vez de Eclipse o Netbeans?
+### ¿Por qué usar IntelliJ en vez de Eclipse o Netbeans?
 
 Es el IDE más estable en la actualidad, aguanta jornadas de trabajo completas sin dejar de funcionar.
 Sus herramientas de apoyo al desarrollo son más avanzadas y fáciles de usar que las de otros IDEs. Algunos ejemplos:
