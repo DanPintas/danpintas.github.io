@@ -16,6 +16,8 @@ Una interfaz funcional puede tener cualquier número de métodos default (métod
 
 ## Por qué usar programación funcional
 
+TO DO
+
 ## Modos de uso: de la implementación explícita a la referencia de método
 
 Para ilustrar las maneras de implementar interfaces funcionales usaremos como ejemplo el método `filter(Predicate<T>)` 
@@ -125,6 +127,10 @@ List<Integer> lengths = Stream.of("a", null, "b", null, "c")
         .map(String::length) // equivalente a implementar str -> str.length()
         .collect(Collectors.toList());
 ```
+
+## Interfaces funcionales comunes
+
+TO DO
 
 # Enlaces de interés
 * [Interfaces funcionales (Baeldung)](https://www.baeldung.com/java-8-functional-interfaces)
