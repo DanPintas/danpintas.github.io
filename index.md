@@ -2,8 +2,6 @@ Esta web plantea introducciones a conceptos de programación en Java que, siendo
 
 En cada apartado se incluyen ejercicios para poner en práctica los conceptos y enlaces a fuentes de interés con información más detallada.
 
-# Tabla de contenidos
-
 ## Herramientas
 
 {% assign herramientasPosts = site.categories.herramientas | sort: 'order' %}
