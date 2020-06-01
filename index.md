@@ -1,4 +1,4 @@
-Esta wiki plantea introducciones a conceptos de programación en Java que, siendo de uso común en ambiente empresarial, es poco habitual que se expliquen en formaciones regladas o cursos introductorios.
+Esta web plantea introducciones a conceptos de programación en Java que, siendo de uso común en ambiente empresarial, es poco habitual que se expliquen en formaciones regladas o cursos introductorios.
 
 En cada apartado se incluyen ejercicios para poner en práctica los conceptos y enlaces a fuentes de interés con información más detallada.
 
@@ -6,7 +6,8 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 
 ## Herramientas
 
-{% for post in site.categories.herramientas | sort: 'order' %}
+{% assign herramientasPosts = site.categories.herramientas | sort: 'order' %}
+{% for post in herramientasPosts %}
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
