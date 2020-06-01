@@ -19,3 +19,8 @@ Programación funcional
 {% for post in site.posts %}
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
+
+{% assign myvar = "joe" %}
+
+On a page that uses the layout, you reference that variable:
+{{ myvar }}
