@@ -286,4 +286,4 @@ Crea un ejecutable que, dado el nombre completo de una clase:
 * [Reflexión (Baeldung)](https://www.baeldung.com/java-reflection)
 * [Borrado de tipos (Baeldung)](https://www.baeldung.com/java-type-erasure)
 * [Anotaciones por defecto (Baeldung)](https://www.baeldung.com/java-default-annotations)
-* [Anotaciones personalizadas](https://www.baeldung.com/java-custom-annotation)
+* [Anotaciones personalizadas (Baeldung)](https://www.baeldung.com/java-custom-annotation)
