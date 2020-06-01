@@ -1,6 +1,7 @@
 ---
 layout: default
 title: IntelliJ IDEA
+published: true
 ---
 
 El IDE recomendado para desarrollo en la actualidad es IntelliJ IDEA, que tiene tanto versión gratuita como de pago.
