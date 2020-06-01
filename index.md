@@ -6,6 +6,10 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 
 ## Herramientas
 
+{% for post in site.posts %}
+[{{ post.title }}]({{ post.url }})
+{% endfor %}
+
 [IntelliJ IDEA](/2020/06/01/intellij)
 
 [Maven (gestión de proyectos)](/2020/06/01/maven)
