@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Metaprogramación: reflexión y anotaciones
+title: Metaprogramación - reflexión y anotaciones
 categories: java
 order: 2
 ---
