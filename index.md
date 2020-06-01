@@ -11,9 +11,9 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 {% endfor %}
 
 ## Funcionalidades de Java
-Expresiones regulares
-Metaprogramación: reflexión y anotaciones
-Paquete java.time
-Programación funcional
+
+{% for post in site.categories.java %}
+[{{ post.title }}]({{ post.url }})
+{% endfor %}
 
 ## Spring Boot
