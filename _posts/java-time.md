@@ -1,0 +1,74 @@
+---
+layout: default
+title: Paquete java.time
+categories: java
+order: 1
+---
+
+# Paquete java.time
+
+El paquete `java.time` es una **API de tiempo** disponible a partir de Java 8 para operar con tiempos 
+sin los quebraderos de cabeza habituales al trabajar con las clases `Date` y `Calendar`.
+
+## Ventajas de java.time
+
+* Soporte para husos horarios y precisión en nanosegundos: Sólo `Calendar` soporta offset horarios, 
+  necesitando que programar o importar como dependencia el soporte para zonas horarias.
+* Thread-safe: Las clases de la nueva API soportan meojor concurrencia, principalmente porque son inmutables. 
+  Esto significa que sus atributos no cambian; los métodos que cambian valores siempre retornarán objetos nuevos y distintos.
+  Lo mismo sucede con sus herramientas de formato, siendo `DateTimeFormatter` thread-safe (a diferencia de `SimpleDateFormat`).
+* API más razonable: Trabajar con Date puede conllevar cálculos y correcciones complejos al manipular las fechas
+  y algunos de los métodos pueden ser confusos; la nueva API está mucho más orientada a estándares ISO y es más consistente.
+  
+## Clases principales
+
+* `Instant`: instante en el tiempo, parecido al valor en long de la clase `Date`.
+* `Duration`: medida de tiempo detallada, por ejemplo 3 minutos y 14 segundos.
+* `Period`: medida de tiempo detallada, por ejemplo 3 minutos y 14 segundos.
+* `LocalDate`: fecha sin información horaria.
+* `LocalTime`: hora sin información de fecha ni offset.
+* `LocalDateTime`: fecha y hora sin offset.
+* `OffsetTime`: hora con offset.
+* `OffsetDateTime`: fecha y hora con offset.
+* `ZonedDateTime`: fecha y hora con información de huso horario.
+
+## Cómo se usa
+
+Tenemos tres maneras principales de obtener objetos de la API:
+* El método estático `now`, que nos dará el valor actual de la clase correspondiente.
+* El método estático `of` o la gama `ofX`, que hacen las veces de constructores.
+* El método estático `parse`, que lee un String para convertirlo.
+
+Los objetos disponen de un abanico de métodos usables:
+* `get` y `getX` para saber los valores de unidades temporales como año, hora o día de la semana.
+* Utilidades sobre el propio valor, como `isBefore/Equal/After`, `isLeapYear` o `lengthOfMonth`.
+* `atX` para obtener otra medida más detallada; por ejemplo, `LocalDateTime LocalDate.atTime(LocalTime)`.
+* `minus`, `minusX`, `plus`, `plusX`, `with` y `withX` para obtener unidades con valores cambiados. 
+  * Es importante recordar que **tenemos que reasignar nuestras variables al usar estos métodos** 
+    ya que lo que hacen es generar y retornar nuevas instancias inmutables y no cambiar las nuestras.
+    ```java
+    LocalDate localDate = LocalDate.of(2020, 06, 01);
+    
+    // si no reasignamos, la variable no cambia de valor
+    localDate.plusDays(1);
+    System.out.println(localDate); // 2020-06-01
+    
+    // si reasignamos, la variable cambia de valor
+    localDate = localDate.plusDays(1);
+    System.out.println(localDate); // 2020-06-02
+    ```
+
+# Proyectos de prueba
+
+## Calendario
+
+Desarrolla una aplicación que recibiendo un año y mes, pinte su calendario correspondiente
+
+## Reloj multizona
+
+Desarrolla una aplicación que te muestre la hora en Madrid, Berlín, Sao Paulo y Hong Kong, actualizándose cada minuto.
+
+Muestra la hora española con formato "Miércoles, 1 de junio de 2020, 4:30PM" y el resto en formato ISO.
+
+# Enlaces de interés
+* [Introducción a la API temporal de Java 8 (Baeldung)](https://www.baeldung.com/java-8-date-time-intro)
