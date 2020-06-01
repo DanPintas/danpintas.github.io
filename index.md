@@ -6,7 +6,7 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 
 ## Herramientas
 
-{% for post in site.posts %}
+{% for post in site.categories.herramientas %}
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
