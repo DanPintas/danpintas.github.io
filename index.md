@@ -11,14 +11,4 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 
 ## APIs de Java
 
-{% assign postsApisJava = site.categories.apisJava | sort: 'order' %}
-{% for post in postsApisJava %}
-[{{ post.title }}]({{ post.url }})
-{% endfor %}
-
 ## Programación funcional
-
-{% assign postsFuncional = site.categories.funcional | sort: 'order' %}
-{% for post in postsFuncional %}
-[{{ post.title }}]({{ post.url }})
-{% endfor %}
