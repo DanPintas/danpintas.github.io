@@ -5,8 +5,10 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 # Tabla de contenidos
 
 ## Herramientas
-IntelliJ (IDE)
-Maven (gestión de proyectos)
+
+[IntelliJ IDEA](/2020/06/01/intellij)
+
+[Maven (gestión de proyectos)](/2020/06/01/maven)
 
 ## Funcionalidades de Java
 Expresiones regulares
@@ -15,12 +17,3 @@ Paquete java.time
 Programación funcional
 
 ## Spring Boot
-
-{% for post in site.posts %}
-[{{ post.title }}]({{ post.url }})
-{% endfor %}
-
-{% assign myvar = "joe" %}
-
-On a page that uses the layout, you reference that variable:
-{{ myvar }}
