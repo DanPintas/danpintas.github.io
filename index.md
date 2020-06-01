@@ -15,5 +15,3 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 {% for post in site.categories.java %}
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
-
-## Spring Boot
