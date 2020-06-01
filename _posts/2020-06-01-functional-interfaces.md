@@ -16,12 +16,50 @@ Una interfaz funcional puede tener cualquier número de métodos default (métod
 
 ## Por qué usar programación funcional
 
-TO DO
+Las principales ventajas de la programación funcional son:
+* Favorecer la encapsulación de lógica, facilitando que nuestra lógica sea reusable y más fácil de testear.
+* Hacer código más legible, tanto para programadores como no-programadores.
 
-## Modos de uso: de la implementación explícita a la referencia de método
+Por ejemplo, digamos que quiero coger una lista de Strings y obtener una lista de ellos en formato "texto-ejemplo".
+La opción tradicional sería:
 
-Para ilustrar las maneras de implementar interfaces funcionales usaremos como ejemplo el método `filter(Predicate<T>)` 
-en el siguiente código:
+```java
+List<String> strings = Arrays.asList("valor 1", null, "valor 2", "");
+List<String> tags = new ArrayList<>();
+for (String string: strings) {
+    if (string != null && !string.isEmpty()) {
+        String tag = string.toLowerCase().replaceAll("\\s+", "-");
+        tags.add(tag);
+    }
+}
+System.out.println(String.join(", ", tags));
+```
+
+Y la opción funcional:
+```java
+List<String> strings = Arrays.asList("valor 1", null, "valor 2", "");
+List<String> tags = strings.stream()
+        .filter(StringUtils::isNotEmpty)
+        .map(this::toTag);
+        .collect(Collectors.toList());
+```
+
+## Interfaces funcionales comunes
+
+* `Runnable`: la lambda más simple, ni entradas ni salidas, para comportamientos autocontenidos; por ejemplo, anotar un timestamp).
+* `Function<I, O>`: función una entrada y una salida de los tipos que queramos.
+* `BiFunction<I, J, O>`: función de dos argumentos, pudiendo elegir los tipos de cada argumento y el retorno.
+* `Supplier<O>`: retorna un tipo sin argumentos de entrada; llamar a un constructor sería el ejemplo más básico.
+* `Consumer<I>`: acepta un objeto sin retornar nada; normalmente se usa para efectos secundarios como imprimir un resultado.
+* `Predicate<I>`: como `Function<I, boolean>`; su uso más habitual es para filtrados o búsquedas.
+* `Operator<IO>`: como `Function<IO, IO>`; suele usarse para transformaciones, especialmente en inmutables como los `String`.
+
+Existe una gama de especializaciones para los tipos primitivos `double`, `int` y `long` como `ToIntFunction` o `LongUnaryOperator`.
+Si sabemos que podemos trabajar con tipos primitivos es bueno usarlos por su menor huella de memoria y mejor rendimiento.
+
+## Modos de uso: de menos a más funcional
+
+Para ilustrar las maneras de implementar interfaces funcionales usaremos como ejemplo un `Predicate` en el siguiente código:
 
 ```java
 List<String> strings = Stream.of("a", null, "b", null, "c")
@@ -74,7 +112,7 @@ List<String> strings = Stream.of("a", null, "b", null, "c")
 Con respecto a la implementación explícita ganamos el no tener que pasar argumentos a un constructor y no mantener otra clase,
 pero declarar implementaciones anónimas puede hacer que nuestro código sea menos legible.
 
-### Lambdas
+### Lambda
 
 La implementación anónima puede aligerarse en el caso de las interfaces funcionales, aprovechando que ya sabe qué interfaz y método rellena:
 ```java
@@ -97,7 +135,7 @@ List<String> strings = Stream.of("a", null, "b", null, "c")
         .collect(Collectors.toList());
 ```
 
-### Referencias de métodos
+### Referencia de método
 
 Supongamos que queremos encapsular nuestra lógica para reutilizarla en otros puntos, y creamos para ello un método `isNotNull`:
 ```java
@@ -128,9 +166,10 @@ List<Integer> lengths = Stream.of("a", null, "b", null, "c")
         .collect(Collectors.toList());
 ```
 
-## Interfaces funcionales comunes
+# Ejercicios
 
 TO DO
 
 # Enlaces de interés
 * [Interfaces funcionales (Baeldung)](https://www.baeldung.com/java-8-functional-interfaces)
+* [Tipos primitivos contra objetos (Baeldung)](https://www.baeldung.com/java-primitives-vs-objects)
