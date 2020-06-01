@@ -8,17 +8,3 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 {% for post in herramientasPosts %}
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
-
-## APIs de Java
-
-{% assign apisJavaPosts = site.categories.apisJava | sort: 'order' %}
-{% for post in apisJavaPosts %}
-[{{ post.title }}]({{ post.url }})
-{% endfor %}
-
-## Programación funcional
-
-{% assign functionalPosts = site.categories.functional | sort: 'order' %}
-{% for post in functionalPosts %}
-[{{ post.title }}]({{ post.url }})
-{% endfor %}
