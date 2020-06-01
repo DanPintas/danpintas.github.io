@@ -168,7 +168,7 @@ List<Integer> lengths = Stream.of("a", null, "b", null, "c")
 
 # Ejercicios
 
-TO DO
+Implementar interfaces funcionales complejas es contraindicable, por lo que los conceptos de programación funcional se pondrán en práctica junto a APIs como `Optional` o `Stream` para tratar la división en lógicas sencillas.
 
 # Enlaces de interés
 * [Interfaces funcionales (Baeldung)](https://www.baeldung.com/java-8-functional-interfaces)
