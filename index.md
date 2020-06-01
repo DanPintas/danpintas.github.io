@@ -16,7 +16,7 @@ En cada apartado se incluyen ejercicios para poner en práctica los conceptos y 
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
-## Funcionalidades de Java
+## Programación funcional
 
 {% assign functionalPosts = site.categories.functional | sort: 'order' %}
 {% for post in functionalPosts %}
