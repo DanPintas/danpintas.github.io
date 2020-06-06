@@ -168,7 +168,11 @@ List<Integer> lengths = Stream.of("a", null, "b", null, "c")
 
 # Ejercicios
 
-Implementar interfaces funcionales complejas es contraindicable, por lo que los conceptos de programación funcional se pondrán en práctica junto a APIs como `Optional` o `Stream` para tratar la división en lógicas sencillas.
+Implementa las siguientes interfaces funcionales:
+* Para `Map<String, String>.forEach(BiConsumer<String, String> action)`, imprime cada par clave-valor.
+* Para `List<Double>.removeIf(Predicate<Integer> predicate)`, elimina todos los valores nulos, infinitos y NaN.
+* Para `List<String>.sort(Comparator<String> comparator)`, ordena la lista en órden alfabético ignorando mayúsculas.
+* Para `Map<String, Integer>.compute(String key, BiFunction<String, Integer, Integer> remappingFunction)`, añade siempre 1 al valor anterior, tratando el `null` como un 0.
 
 # Enlaces de interés
 * [Interfaces funcionales (Baeldung)](https://www.baeldung.com/java-8-functional-interfaces)
