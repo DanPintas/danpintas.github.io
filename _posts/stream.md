@@ -81,6 +81,5 @@ Utilizando la API de `Stream`:
 TO DO
 
 # Enlaces de interés
-* [Optional (Oracle)](https://www.oracle.com/technical-resources/articles/java/java8-optional.html)
 * [Introducción a Stream (Baeldung)](https://www.baeldung.com/java-8-streams-introduction)
 * [Tutorial de la API de Stream (Baeldung)](https://www.baeldung.com/java-8-streams)
