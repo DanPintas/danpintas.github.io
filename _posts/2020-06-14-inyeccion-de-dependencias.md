@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Inyección de dependencias (DI)
+title: Inyección de dependencias
 categories: inyeccion-dependencias
 order: 1
 ---
 
-# Inyección de dependencias (DI)
+# Inyección de dependencias
 
 En programas Java de gran tamaño es habitual incluir no sólo las dependencias que necesitamos directamente, 
 sino herramientas para gestionar el programa a nivel interno; la más común es un inyector de dependencias.
@@ -207,5 +207,5 @@ Desarrolla una aplicación que a través de un inyector inyecte en una clase `Ma
 Opcionalmente, amplíalo para que soporte genéricos y/o distintas dependencias en función de un String.
 
 # Enlaces de interés
-* [Metaprogramación - reflexión y anotaciones] (https://danpintas.github.io/apis-java/2020/06/01/reflection.html)
+* [Metaprogramación - reflexión y anotaciones] (https://danpintas.github.io/apis-java/2020/06/01/reflexion.html)
 * [Estándar de inyección de dependencias en Java] (https://github.com/javax-inject/javax-inject)
