@@ -9,7 +9,7 @@
 
 ## APIs de Java
 
-{% assign postsApisJava = site.categories.apisJava | sort: 'order' %}
+{% assign postsApisJava = site.categories.apis-java | sort: 'order' %}
 {% for post in postsApisJava %}
 [{{ post.title }}]({{ post.url }})
 {% endfor %}
