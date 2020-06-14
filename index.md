@@ -24,9 +24,3 @@
 {% endfor %}
 
 
-## Inyección de dependencias
-
-{% assign postsInyeccionDependencias = site.categories.inyeccion-dependencias | sort: 'order' %}
-{% for post in postsInyeccionDependencias %}
-* [{{ post.title }}]({{ post.url }})
-{% endfor %}
