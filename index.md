@@ -32,5 +32,3 @@
 {% assign postsInyeccionDependencias = site.categories.inyeccion-dependencias | sort: 'order' %}
 {% assign postsInyeccionDependenciasSpring = site.categories.inyeccion-dependencias-spring | sort: 'order' %}
 {% assign numPostsInyeccionDependencias = postsInyeccionDependencias.length %}
-
-{{ numPostsInyeccionDependencias }}
