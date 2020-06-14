@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Inyección de dependencias (DI)
-categories: di
+categories: inyeccion-dependencias
 order: 1
 ---
 
@@ -130,7 +130,12 @@ pero eso es de hecho una ventaja porque nos indica cuándo una clase tiene demas
 
 ## Provisión de dependencias
 
-Tan importante como definir cómo se inyectan las dependencias de un componente es definir qué componente se inyecta
+Tan importante como definir cómo se inyectan las dependencias de un componente es definir cómo se proveen las dependencias.
+Las estrategias habituales cuando se pide una dependencia al inyector son:
+* Prototipo: siempre proporciona un nuevo objeto (estrategia por defecto en la mayoría de frameworks pero no en Spring).
+* Singleton: siempre properciona el mismo objeto.
+
+Dependiendo de nuestra aplicación, puede ser que nuestras dependencias provean objetos distintos en función de algún estado; por ejemplo, reutilizar una dependencia pero sólo en el marco de un mismo hilo o una misma petición o sesión HTTP.
 
 ## El inyector
 
@@ -179,4 +184,28 @@ public class Greeter {
 }
 ```
 
+## Dependencias de genéricos
+
+Por defecto, los inyectores reconocerán las dependencias por su clase;
+sin embargo, aveces nos interesará reconocer distintas dependencias en función del tipo genérico 
+(considerar que un `List<String>` no es lo mismo que un `List<Integer>`).
+
+Para estos casos, los inyectores de dependencias suelen utilizar mecanismos relacionados con la reflexión
+para reconocer la clase especializada con su tipo genérico en lugar de simplemente el tipo.
+
+## Múltiples dependencias de una misma clase
+En ocasiones nos interesará tener varias dependencias de un mismo tipo (p.e. distintos `Properties` para distintas funcionalidades).
+
+La estrategia habitual a seguir es que, además de la clase a inyectar, se acepte de manera opcional un nombre o identificador para distinguir cuál de las depndencias de un mismo tipo querremos realmente.
+
 # Ejercicios
+Tal y como se indicaba al principio, es poco habitual utilizar implementaciones propias de un inyector de dependencias, por lo que es más importante tener claros los conceptos generales para cuando se trabaje con cualquier framework; no es necesario hacer una implementación propia de un inyector para entender cómo funcionan.
+
+## Inyector de dependencias
+Desarrolla una aplicación que a través de un inyector inyecte en una clase `MainComponent` una dependencia de la clase `SingletonComponent` y otra de una clase `PrototypeComponent` con los alcances de mismo nombre; comprueba que las dependencias inyectadas aplican el alcance correcto (para dos instancias de `MainComponent`, su `SingletonComponent` debe ser el mismo y su `PrototypeComponent` distinto).
+
+Opcionalmente, amplíalo para que soporte genéricos y/o distintas dependencias en función de un String.
+
+# Enlaces de interés
+* [Metaprogramación - reflexión y anotaciones] (https://danpintas.github.io/apis-java/2020/06/01/reflection.html)
+* [Estándar de inyección de dependencias en Java] (https://github.com/javax-inject/javax-inject)
