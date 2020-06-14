@@ -31,4 +31,10 @@
 
 {% assign postsInyeccionDependencias = site.categories.inyeccion-dependencias | sort: 'order' %}
 {% assign postsInyeccionDependenciasSpring = site.categories.inyeccion-dependencias-spring | sort: 'order' %}
-{% assign numPostsInyeccionDependencias = postsInyeccionDependencias.length %}
+{% assign numPostsInyeccionDependencias = postsInyeccionDependencias | size %}
+
+
+{% for post in postsInyeccionDependenciasSpring %}
+[{{ post.title }}]({{ post.url }})
+{% else %}
+{% endfor %}
